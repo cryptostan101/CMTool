@@ -14,7 +14,8 @@ A rudimentary configuration management tool and use it to configure two servers 
 
 - To install a package, add the package name to install.lst in the packages directory. Each package name should not contain own line without any trailing whitespace. See details below.
 
-`
+```bash
+
 apache2
 php7.4-mysql
 php7.4
@@ -26,7 +27,7 @@ php7.4-zip
 php7.4-fpm
 php7.4-mbstring
 
-`
+```
 
 - To uninstall a package involves doing the same thing as install package but this time one should add package names to the uninstall.lst file in the packages directory.
 
