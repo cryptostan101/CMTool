@@ -1,0 +1,4 @@
+permissions=644
+owner=root
+group=jouman
+file=/var/www/html/index.php
