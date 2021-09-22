@@ -2,7 +2,7 @@
 
 
 ##  Please note - This script has not been tested yet because I dont have access to server
-## dependencies - requires shpass
+## dependencies - requires sshpass
 host1=$1
 host2=$2
 user=$3

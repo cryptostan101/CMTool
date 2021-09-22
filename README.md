@@ -1,6 +1,6 @@
 # Configuration Management Tool
 
-A rudimentary configuration management tool and use it to configure two servers for production service of a simple PHP web application to to Debian Linux server. CMtool is implemented similarly to Puppet, Chef, Fabric and Ansible. This tool was developed using bash / shell scripting language.
+A rudimentary configuration management tool and use it to configure two servers for production service of a simple PHP web application to Debian Linux server. CMtool is implemented similarly to Puppet, Chef, Fabric and Ansible. This tool was developed using bash / shell scripting language.
 
 ## Abstractions:
 
