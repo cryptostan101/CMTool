@@ -12,7 +12,7 @@ A rudimentary configuration management tool and use it to configure two servers 
 
 ## How to Configure:
 
-- To install a package, add the package name to install.lst in the packages directory. Each package name should not contain own line without any trailing whitespace. See details below.
+- To install a package, add the package name to install.lst in the packages directory. Each package name should contain is own line without any trailing whitespace. See details below.
 
 ```bash
 
@@ -63,3 +63,11 @@ without putting sudo in front and if the user is non root then run command putti
   cd CMTool
   ./main.sh
   ```
+
+## transfer files using script (Pending access to server)
+
+P.S - Not tested yet
+
+```bash
+./transfer.sh 10.XX.XX.XX 10.XX.XX.XX YOUR_USERNAME YOUR_PASSWORD YOUR_FILE REMOTE_DIR
+```
