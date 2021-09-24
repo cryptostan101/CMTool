@@ -8,3 +8,4 @@ php7.4-opcache
 php7.4-zip
 php7.4-fpm
 php7.4-mbstring
+php7.4-curl

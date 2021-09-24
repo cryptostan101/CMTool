@@ -1,6 +1,6 @@
 # Configuration Management Tool
 
-A rudimentary configuration management tool and use it to configure two servers for production service of a simple PHP web application to Debian Linux server. CMtool is implemented similarly to Puppet, Chef, Fabric and Ansible. This tool was developed using bash / shell scripting language.
+A rudimentary configuration management tool to configure two servers for production service of a simple PHP web application to Debian/Ubuntu Linux server environment. CMtool is implemented similarly to Puppet, Chef, Fabric and Ansible. This tool was developed using bash / shell scripting language.
 
 ## Abstractions:
 
@@ -26,6 +26,7 @@ php7.4-opcache
 php7.4-zip
 php7.4-fpm
 php7.4-mbstring
+php7.4-curl
 
 ```
 
@@ -41,13 +42,13 @@ without putting sudo in front and if the user is non root then run command putti
 - Move files to remote servers via scp or ftp:
 
   ```bash
-  scp -r CMTool.tar.gz username@IP_ADDRESS/
+  scp -r CMTool.tar.gz username@IP_ADDRESS/opt
   ```
 
-- Change directory to where CMTool tar file is located and untar file CMTool.tar.gz :
+- Change directory to where CMTool tar file is located on the remoter server and untar file CMTool.tar.gz :
 
   ```bash
-  cd /
+  cd /opt
   tar -xvzf CMTool.tar.gz
 
   ```
@@ -64,10 +65,10 @@ without putting sudo in front and if the user is non root then run command putti
   ./main.sh
   ```
 
-## transfer files using script (Pending access to server)
+## transfer files using script from target server to remote server
 
-P.S - Not tested yet
+## Please install sshpass on target server - apt-get install sshpass
 
 ```bash
-./transfer.sh 10.XX.XX.XX 10.XX.XX.XX YOUR_USERNAME YOUR_PASSWORD YOUR_FILE REMOTE_DIR
+./transfer.sh 10.XX.XX.XX 10.XX.XX.XX root YOUR_PASSWORD CMTool.tar.gz /opt
 ```

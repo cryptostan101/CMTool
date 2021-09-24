@@ -1,4 +1,4 @@
 permissions=644
 owner=root
-group=jouman
+group=root
 file=/var/www/html/index.php

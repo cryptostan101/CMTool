@@ -20,7 +20,7 @@ echo "Install File located at: - $installFile"
 echo "Uninstall File located at: - $uninstallFile"
 echo "Config File located at: - $configFile"
 
-# Functions:
+
 initialize() {
     echo "$(date): Starting Configuration Management Tool ********************************"
     sudo touch "${logFile}" >&/dev/null
@@ -73,11 +73,18 @@ installPackages(){
             install_list+=( "${value}" )
         done < "$installFile"
 
+        ## remove local repo dependency, already exit in deployment server
+        ##echo "$(date): Adding SURY PHP PPA repository ********************************"
+        ##sudo apt-get -y install lsb-release apt-transport-https ca-certificates wget
+        ##sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+        ##echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php.
 
-        echo "$(date): Adding SURY PHP PPA repository ********************************"
-        sudo apt-get -y install lsb-release apt-transport-https ca-certificates wget
-        sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
-        echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php.list
+        ## remove server repo dependency
+        ##echo "$(date): Adding PHP repository ********************************"
+        ##sudo apt-get update
+        ##sudo apt -y install software-properties-common
+        ##sudo add-apt-repository ppa:ondrej/php
+        ##sudo apt-get update
 
         echo "$(date): Installing packages ********************************"
         for pkg in "${install_list[@]}"
@@ -131,9 +138,9 @@ startApp(){
 
 sanityTest(){
   echo "$(date): Running curl command  ********************************"
-  host=`hostname`
-  curlCommand= `curl -sv http://$host`;
-	echo "$curlCommand";
+  host="`hostname`"
+  curlCommand= "`curl -sv http://$host`";
+	echo "$curlCommand " || exit 0 ;
 }
 
 
