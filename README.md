@@ -65,9 +65,7 @@ without putting sudo in front and if the user is non root then run command putti
   ./main.sh
   ```
 
-## transfer files using script from target server to remote server
-
-## Please install sshpass on target server - apt-get install sshpass
+## transfer files using script from target server to remote server. Please install sshpass on target server - apt-get install sshpass
 
 ```bash
 ./transfer.sh 10.XX.XX.XX 10.XX.XX.XX root YOUR_PASSWORD CMTool.tar.gz /opt
